@@ -1,0 +1,113 @@
+/* Put your css in here */
+
+body{
+    background: url('./app/assets/images/unj_bg.png');
+}
+
+.loader{
+    position: fixed;
+    left: 50%;
+    margin-left: -100px;
+    top: 0px;
+    width: 200px;
+    height: 100%;
+    z-index: 9999;
+    /*background: url('./app/assets/images/loader_unj.gif') 50% 50% no-repeat rgb(249,249,249);*/
+    background: url('./app/assets/images/unj.png') 0% 50% no-repeat transparent;
+    background-size: 200px;
+}
+
+.left-loader {
+    position: fixed;
+    left: 50%;
+    margin-left: -100px;
+    top: 0px;
+    width: 100px;
+    height: 100%;
+    z-index: 9999;
+    /*background: url('./app/assets/images/loader_unj.gif') 50% 50% no-repeat rgb(249,249,249);*/
+    background: url('./app/assets/images/unj.png') 0% 50% no-repeat transparent;
+    background-size: 200px;
+}
+
+.right-loader {
+    position: fixed;
+    right: 50%;
+    margin-right: -100px;
+    top: 0px;
+    width: 100px;
+    height: 100%;
+    z-index: 9999;
+    /*background: url('./app/assets/images/loader_unj.gif') 50% 50% no-repeat rgb(249,249,249);*/
+    background: url('./app/assets/images/unj.png') 100% 50% no-repeat transparent;
+    background-size: 200px;
+}
+
+.loader-fade{
+    opacity: 0;
+    z-index: -10;
+    left: -100px;
+}
+
+.padding-10{
+    padding: 10px;
+}
+
+.padding-top-10{
+    padding-top: 10px;
+}
+
+.btn-green, .bg-green{
+    background: #006f45 !important;
+    color: #FFF !important;
+}
+
+.text-green {
+    color: #006f45 !important;
+}
+
+.btn-yellow, .bg-yellow{
+    background: #ffdd00 !important;
+    color: #FFF !important;
+}
+
+.text-yellow {
+    color: #ffdd00 !important;
+}
+
+.borderless{
+    border: none !important;
+}
+
+.allscroll{
+     cursor: all-scroll;
+}
+
+@media screen
+{
+    .noPrint{}
+    .noScreen{display:none;}
+}
+
+@media print
+{
+    .noPrint{display:none;}
+    .noScreen{}
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.margtop-0{
+    margin-top: 0px !important;
+}
+
+.break-word{
+    word-wrap: break-word !important;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}

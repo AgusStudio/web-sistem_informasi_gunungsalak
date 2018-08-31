@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#006f45">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#006f45">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>Penmaba UNJ</title>
+    <!-- base href="http://pendaftaran.unj.ac.id/" -->
+    <!--<base href="/">-->
+
+    <!-- IE required polyfills (from CDN), in this exact order -->
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/es6-sham.js"></script>
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/system-polyfills.js"></script>
+
+    <!---->
+    <!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+    <link rel="shortcut icon" href="http://pendaftaran.unj.ac.id/app/assets/images/unj.png">
+
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="kartu%20peserta%20penmaba%20unj%20nelus_files/css.css">
+    <link rel="stylesheet" type="text/css" href="kartu%20peserta%20penmaba%20unj%20nelus_files/icon.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="kartu%20peserta%20penmaba%20unj%20nelus_files/bootstrap.css">
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="kartu%20peserta%20penmaba%20unj%20nelus_files/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="kartu%20peserta%20penmaba%20unj%20nelus_files/ripples.css">
+
+    <!-- Sweetalert -->
+    <link rel="stylesheet" type="text/css" href="kartu%20peserta%20penmaba%20unj%20nelus_files/sweetalert.css">
+
+    <link rel="stylesheet" type="text/css" href="kartu%20peserta%20penmaba%20unj%20nelus_files/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="kartu%20peserta%20penmaba%20unj%20nelus_files/index.css">
+<style>.navbar-wrapper[_ngcontent-xrd-1] {
+    background: #006f45;
+    background-size: 100%;
+}</style><style>.navbar[_ngcontent-xrd-1]{margin-bottom: 0px}</style><style>.error-input[_ngcontent-xrd-6]{
+    background-color: #ff0000;
+}
+
+.fileUpload[_ngcontent-xrd-6] {
+    position: relative;
+    overflow: hidden;
+    
+}
+.fileUpload[_ngcontent-xrd-6] input.upload[_ngcontent-xrd-6] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.customized-select[_ngcontent-xrd-6]{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #D2D2D2;
+    padding-top: 7px;
+    margin-top: 7px;
+    background: transparent;
+}</style><style>.ng-datepicker-input[_ngcontent-xrd-7] {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] {
+    position: absolute;
+    z-index: 99;
+    width: 250px;
+    background: #fff;
+    font-size: 12px;
+    color: #565a5c;
+    display: inline-block;
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] {
+    width: 250px;
+    display: inline-block;
+    padding: 5px 0 0 0;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] i[_ngcontent-xrd-7] {
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] > .left[_ngcontent-xrd-7] {
+    width: 35px;
+    display: inline-block;
+    float: left;
+    margin: 5px 0 0 3px;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] > .left[_ngcontent-xrd-7] > i.prev-year-btn[_ngcontent-xrd-7] {
+    float: left;
+    display: block;
+    font-size: 14px;
+    opacity: 0.4;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] > .left[_ngcontent-xrd-7] > i.prev-month-btn[_ngcontent-xrd-7] {
+    float: left;
+    margin: -5px 0 0 9px;
+    display: block;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] > span.date[_ngcontent-xrd-7] {
+    width: 170px;
+    text-align: center;
+    font-size: 14px;
+    color: #565a5c;
+    font-weight: bold;
+    float: left;
+    padding: 3px 0 0 0;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] > .right[_ngcontent-xrd-7] {
+    width: 35px;
+    display: inline-block;
+    float: right;
+    margin: 5px 0 0 0;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] > .right[_ngcontent-xrd-7] > i.next-year-btn[_ngcontent-xrd-7] {
+    float: left;
+    display: block;
+    font-size: 14px;
+    opacity: 0.4;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] > .right[_ngcontent-xrd-7] > i.next-month-btn[_ngcontent-xrd-7] {
+    float: left;
+    margin: -6px 9px 0 0;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .day-names[_ngcontent-xrd-7] {
+    width: 250px;
+    border-bottom: 1px solid #c4c4c4;
+    display: inline-block;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .day-names[_ngcontent-xrd-7] > span[_ngcontent-xrd-7] {
+    width: 35.7px;
+    text-align: center;
+    color: #82888a;
+    float: left;
+    display: block;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .calendar[_ngcontent-xrd-7] {
+    width: 255px;
+    display: inline-block;
+    margin: -3px 0 -3.5px -1px;
+    padding: 0;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .calendar[_ngcontent-xrd-7] > span[_ngcontent-xrd-7] > span.day[_ngcontent-xrd-7] {
+    width: 35px;
+    height: 35px;
+    border-left: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    float: left;
+    display: block;
+    color: #565a5c;
+    text-align: center;
+    font-weight: bold;
+    line-height: 35px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .calendar[_ngcontent-xrd-7] > span[_ngcontent-xrd-7]:last-child > span.day[_ngcontent-xrd-7] {
+    border-right: 1px solid #c4c4c4;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .calendar[_ngcontent-xrd-7] > span[_ngcontent-xrd-7]:nth-child(7n) > span.day[_ngcontent-xrd-7] {
+    border-right: none;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .calendar[_ngcontent-xrd-7] > span[_ngcontent-xrd-7] > span.day.disabled[_ngcontent-xrd-7] {
+    border-left: 1px solid transparent;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .calendar[_ngcontent-xrd-7] > span[_ngcontent-xrd-7] > span.day[_ngcontent-xrd-7]:hover {
+    background: #2193b0;
+    color: #fff;
+  }
+
+  .ng-datepicker[_ngcontent-xrd-7] > .calendar[_ngcontent-xrd-7] > span[_ngcontent-xrd-7] > span.day.selected[_ngcontent-xrd-7] {
+    background: #186c81;
+    cursor: default;
+    pointer-events: none;
+    color: #fff;
+  }
+
+  .ng-datepicker.static[_ngcontent-xrd-7] {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ng-datepicker.static[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] {
+    width: 100%;
+    text-align: center;
+    background-color: #eee;
+    padding: 5px 0;
+  }
+
+  .ng-datepicker.static[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] > .left[_ngcontent-xrd-7] > i.prev-month-btn[_ngcontent-xrd-7] {
+    margin-top: -6px;
+  }
+
+  .ng-datepicker.static[_ngcontent-xrd-7] > .controls[_ngcontent-xrd-7] > span.date[_ngcontent-xrd-7] {
+    width: auto;
+    float: none;
+    display: inline-block;
+    padding-top: 4px;
+  }
+
+  .ng-datepicker.static[_ngcontent-xrd-7] > .day-names[_ngcontent-xrd-7] {
+    width: 100%;
+    background-color: #f9f9f9;
+  }
+
+  .ng-datepicker.static[_ngcontent-xrd-7] > .day-names[_ngcontent-xrd-7] > span[_ngcontent-xrd-7] {
+    width: calc(100%/7);
+  }
+
+  .ng-datepicker.static[_ngcontent-xrd-7] > .calendar[_ngcontent-xrd-7] {
+    width: 100%;
+  }
+
+  .ng-datepicker.static[_ngcontent-xrd-7] > .calendar[_ngcontent-xrd-7] > span[_ngcontent-xrd-7] > span.day[_ngcontent-xrd-7] {
+    width: calc(100%/7 - 1px);
+    height: 50px;
+    line-height: 50px;
+  }</style><style>.borderless-input[_ngcontent-xrd-8]{
+    outline: none;
+    box-shadow: none;
+    border: none !important;
+    border-color: transparent !important;
+    transition: 1ms ease-in linear;
+    -web-transition: 1ms ease-in linear;
+    -moz-transition: 1ms ease-in linear;
+    -ms-transition: 1ms ease-in linear;
+    -o-transition: 1ms ease-in linear;
+}
+
+.borderless-input[_ngcontent-xrd-8]:disabled{
+    background-color: #FFF !important;
+    transition: 1ms ease-in linear;
+    -web-transition: 1ms ease-in linear;
+    -moz-transition: 1ms ease-in linear;
+    -ms-transition: 1ms ease-in linear;
+    -o-transition: 1ms ease-in linear;
+}
+
+.error-input[_ngcontent-xrd-8]{
+    background-color: #ff0000;
+}
+
+.fileUpload[_ngcontent-xrd-8] {
+    position: relative;
+    overflow: hidden;
+    
+}
+.fileUpload[_ngcontent-xrd-8] input.upload[_ngcontent-xrd-8] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.customized-select[_ngcontent-xrd-8]{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #D2D2D2;
+    padding-top: 7px;
+    margin-top: 7px;
+    background: transparent;
+}</style><style>@CHARSET "UTF-8";</style></head>
+
+<body class="">
+    <div class="loader loader-fade"></div>
+
+    <my-app _nghost-xrd-1=""><!--template bindings={}-->
+<!--template bindings={}-->
+<div class="navbar-wrapper" id="the-navbar" translate-fade-element="" _ngcontent-xrd-1="" style="transform: translate(0px, 0px); opacity: 1; transition-duration: 1000ms; transition-delay: 0ms;">
+    
+    <div class="navbar navbar-default navbar-static-top" _ngcontent-xrd-1="">
+        <div class="container-fluid" _ngcontent-xrd-1="">
+            <div class="navbar-header" _ngcontent-xrd-1="">
+                <!--template bindings={}--><button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" scale-element="" type="button" _ngcontent-xrd-1="" style="transform: scale(1, 1); opacity: 1; transition-duration: 500ms; transition-delay: 0ms;">
+                    <span class="icon-bar" _ngcontent-xrd-1=""></span>
+                    <span class="icon-bar" _ngcontent-xrd-1=""></span>
+                    <span class="icon-bar" _ngcontent-xrd-1=""></span>
+                </button>
+                <a class="navbar-brand" href="javascript:void(0)" _ngcontent-xrd-1="">
+                    <img alt="" class="img-responsive navbar-left" src="kartu%20peserta%20penmaba%20unj%20nelus_files/logo.png" style="height: 40px; margin-top: -5px; margin-left: -10px;" _ngcontent-xrd-1="">
+                </a>
+            </div>
+            <div _ngcontent-xrd-1="">
+                <!--template bindings={}--><div class="navbar-collapse collapse navbar-responsive-collapse" scale-element="" _ngcontent-xrd-1="" style="transform: scale(1, 1); opacity: 1; transition-duration: 500ms; transition-delay: 0ms;">
+                    <ul class="nav navbar-nav navbar-right" _ngcontent-xrd-1="">
+                        <li _ngcontent-xrd-1=""><a href="javascript:void(0)" _ngcontent-xrd-1="">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet _ngcontent-xrd-1=""></router-outlet><dashboard><!--template bindings={}-->
+<!--template bindings={}-->
+<!--template bindings={}-->
+<!--template bindings={}-->
+<!--template bindings={}--><kartu-ujian _nghost-xrd-9=""><div id="progressData" style="margin: 0px auto; height: 0px; text-align: center; opacity: 0; transform: translate(0px, 0px); transition-duration: 1000ms; transition-delay: 0ms;" translate-fade-element="" _ngcontent-xrd-9="">
+    <!--template bindings={}-->
+</div>
+<div id="myForm" _ngcontent-xrd-9="" class="" style="opacity: 1; transform: translate(0px, 0px); transition-duration: 1000ms;">
+    <!--template bindings={}--><div _ngcontent-xrd-9="">
+        <div id="viewer" _ngcontent-xrd-9="" style="position: fixed; top: 0px; width: 100%; bottom: 0px; height: 609px;"><object data="blob:http://pendaftaran.unj.ac.id/696e5a0b-84a9-4b3f-b6a1-4b5b3a1ca6bb" type="application/pdf" width="100%" height="100%"></object></div>
+    </div>
+</div>
+<!--template bindings={}-->
+<!--template bindings={}--></kartu-ujian></dashboard></my-app>
+
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/vendor.js"></script>
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/libs.js"></script>
+    <script>
+        System.config({
+                    packages: {
+                        app: {
+                        format: 'register',
+                        defaultExtension: 'js'
+                        }
+                    }
+                });
+                System.import('app.js').then(null, console.error.bind(console));
+    </script>
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/is.js"></script>
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/jquery-1.js"></script>
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/bootstrap.js"></script>
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/material.js"></script>
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/ripples.js"></script>
+    <script src="kartu%20peserta%20penmaba%20unj%20nelus_files/sweetalert.js"></script>
+    <script type="text/javascript">
+        $(function () {
+                    $.material.init();
+                    
+                    $(document).on('click','.navbar-collapse.in',function(e) {
+                        if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+                            $(this).collapse('hide');
+                        }
+                    });
+                    window.run = function(){
+                        $('.loader').addClass('loader-fade');
+                    }
+                    window.closeMenuToggle = function(){
+                        $('.navbar-collapse.in').collapse('hide');
+                    }
+                    window.errorDialog = function(message){
+                        swal("Error", message.toString(), "error");
+                    }
+                    window.successDialog = function(message){                        
+                        swal("Sukses", message.toString(), "success");
+                    }
+                    window.infoDialog = function(message){
+                        swal("Informasi", message.toString(), "info");
+                    }
+                });
+    </script>
+
+
+<div class="sweet-overlay" tabindex="-1" style="opacity: -1.14; display: none;"></div><div class="sweet-alert hideSweetAlert" data-custom-class="" data-has-cancel-button="false" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="false" data-animation="pop" data-timer="null" style="display: none; margin-top: -169px; opacity: -1.2;"><div class="sa-icon sa-error" style="display: none;">
+      <span class="sa-x-mark">
+        <span class="sa-line sa-left"></span>
+        <span class="sa-line sa-right"></span>
+      </span>
+    </div><div class="sa-icon sa-warning" style="display: none;">
+      <span class="sa-body"></span>
+      <span class="sa-dot"></span>
+    </div><div class="sa-icon sa-info" style="display: block;"></div><div class="sa-icon sa-success" style="display: none;">
+      <span class="sa-line sa-tip"></span>
+      <span class="sa-line sa-long"></span>
+
+      <div class="sa-placeholder"></div>
+      <div class="sa-fix"></div>
+    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Informasi</h2>
+    <p style="display: block;">Harap dicatat! Kartu Tanda Peserta harus dibawa saat ujian.</p>
+    <fieldset>
+      <input tabindex="3" placeholder="" type="text">
+      <div class="sa-input-error"></div>
+    </fieldset><div class="sa-error-container">
+      <div class="icon">!</div>
+      <p>Not valid!</p>
+    </div><div class="sa-button-container">
+      <button class="cancel" tabindex="2" style="display: none; box-shadow: none;">Cancel</button>
+      <div class="sa-confirm-button-container">
+        <button class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: 0px 0px 2px rgba(140, 212, 245, 0.8), 0px 0px 0px 1px rgba(0, 0, 0, 0.05) inset;">OK</button><div class="la-ball-fall">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div></div></body></html>
